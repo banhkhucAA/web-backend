@@ -146,6 +146,7 @@ module.exports = {
         try{
             let foundProduct = null;
              foundProduct = await getProduct_fromUserCartbyProductID(userID,product);
+            //  console.log(foundProduct);
             const newProduct = {
                 _id: product._id.toString(),
                 name: product.name,
@@ -182,6 +183,7 @@ module.exports = {
                     { _id: new ObjectId(userID), "cart._id": newProduct._id },
                     { $inc: { "cart.$.quantity": 1 } }
                   );
+                  console.log(newProduct._id);
             }
               const Mycart = await getUser_cartbyID(userID);
              let cartItems;

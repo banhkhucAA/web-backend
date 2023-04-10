@@ -1,0 +1,97 @@
+[{
+  "_id": {
+    "$oid": "6422a86bd37f8982c6f9e7e4"
+  },
+  "name": "Xylitol",
+  "year": 2020,
+  "price": 2,
+  "brand": "Xylitol",
+  "category": "Bubble Gum",
+  "image": "../images/xylitol.jpg",
+  "description": "Xylitol x BTS gum is delicious and nutritious",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "6422a86bd37f8982c6f9e7e5"
+  },
+  "name": "Big Babol",
+  "year": 2021,
+  "price": 1.5,
+  "brand": "Perfetti Van Melle",
+  "category": "Buble Gum",
+  "image": "../images/BigBabol.jpg",
+  "description": "Big Babol sweets great taste of childhood",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "6422a86bd37f8982c6f9e7e6"
+  },
+  "name": "Hubba Bubba - Traditional Version",
+  "year": 2017,
+  "price": 1,
+  "brand": "Wrigley's",
+  "category": "Bubble Gum",
+  "image": "../images/HubbaBubbaTV.jpg",
+  "description": "Kẹo Hubba Bubba hương vị truyền thống đóng hộp",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "6422a86bd37f8982c6f9e7e7"
+  },
+  "name": "Hubba Bubba - Limited Version",
+  "year": 2022,
+  "price": 5,
+  "brand": "Wrigley's",
+  "category": "Bubble Gum",
+  "description": "Hubba Bubba Sweets Special Edition Delicious Bars",
+  "image": "../images/HubbaBubbaSV.jpg",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "64238465d37f8982c6f9e7e8"
+  },
+  "name": "ChubaChub",
+  "year": 2017,
+  "price": 1,
+  "brand": "VietNam",
+  "category": "Sweet Candy",
+  "image": "../images/ChubaChup.jpg",
+  "description": "ChubaChub sweets forever happy with childhood",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "6427a86ed42c951aaac63432"
+  },
+  "name": "Chocolate",
+  "year": 2019,
+  "price": 3,
+  "brand": "M&M",
+  "category": "Sweet Candy",
+  "image": "../images/chocolate.png",
+  "description": "Smooth and delicious fresh chocolate candies",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "6427f853efee22580c7787f9"
+  },
+  "name": "Jelly",
+  "year": 2008,
+  "price": 1,
+  "brand": "Hai Ha",
+  "category": "Sweet Candy",
+  "image": "../images/ChipChip.jpg",
+  "description": "Candy bear chips with fruit flavor of childhood",
+  "quantity": 1
+},{
+  "_id": {
+    "$oid": "6427f96cefee22580c7787fa"
+  },
+  "name": "Alpenliebe",
+  "year": 2017,
+  "price": 2,
+  "brand": "M&M",
+  "category": "Sweet Candy",
+  "image": "../images/Alpenliebe.jpg",
+  "description": "Sweets Alpenliebe share love",
+  "quantity": 1
+}]

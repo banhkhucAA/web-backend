@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Shop</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/37ede97c0e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="flex-container">
+        <header class="header">
+           <img class="header_logo" src="./images/logo.png" alt="">
+            <nav class="header_navigation">
+                <a href="/" class="header_navigation-item">HOME</a>
+                <a href="#sec_about" class="header_navigation-item">ABOUT US</a>
+                <a href="/products" class="header_navigation-item">PRODUCTS</a>
+                <a href="" class="header_navigation-item">BLOG</a>
+                <a href="" class="header_navigation-item">CONTACT</a>
+            </nav>
+            <div class="header_icon">
+                <a href="" class="header_icon-item"><i class="fa-solid fa-user"></i></a>
+                <div class="user">
+                    <% if (userName) { %>
+                        <p>Hello <%= userName %><a href=""></a></p>
+                        <a href="/logout"> Logout <i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 11px;"></i></a>
+                      <% }else{ %>
+                        <p>ACCOUNT</p>
+                        <a href="/login">Login</a>
+                        <a href="">|</a>
+                        <a href="/register">Register</a>
+                     <% } %>				  
+                 </div>
+                <a href="" class="header_icon-item"><i class="fa-regular fa-heart"></i></a>
+                <a href="/cart" class="header_icon-item"><i class="fa-solid fa-weight-hanging"></i></a>
+                <input type="checkbox" id="hamburger">
+                <label for="hamburger" class="header_icon-item"><i class="fa-solid fa-bars"></i></label>
+                <div class="menu">
+                    <a href="/">HOME</a>
+                    <a href="">ABOUT US</a>
+                    <a href="/products">PRODUCTS</a>
+                    <a href="">BLOG</a>
+                    <a href="">CONTACT</a>
+                </div>
+            </div>
+        </header>
+        <section class="home">
+            <div class="home_text">
+                <h2 class="home_text-delightful">DELIGHTFUL</h2>
+                <h2 class="home_text-sweets">SWEETS</h2>
+                <div class="home_text-intro">
+                    <p class="home_text-intro-front border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe necessitatibus est enim accusantium voluptate laboriosam odit odio pariatur sed asperiores esse optio totam, et, quisquam culpa eveniet tempore? Similique, molestiae.</p>
+                    <p class="home_text-intro-back border">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe necessitatibus est enim accusantium voluptate laboriosam odit odio pariatur sed asperiores esse optio totam, et, quisquam culpa eveniet tempore? Similique, molestiae.</p>
+                </div>
+            </div>
+            <div class="home_image">
+                <div class="home_image-straw">
+                    <img class="home_image-straw-front border" src="./images/strawberry1.png" alt="">
+                    <img class="home_image-straw-back border" src="./images/strawberry1.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="about" id="sec_about">
+            <h2 class="about_title">ABOUT US</h2>
+            <div class="about_text">
+                <p class="about_text-front border" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus corrupti, aspernatur itaque autem ab debitis quas commodi consequatur omnis aperiam repudiandae vel? Vero, incidunt culpa provident architecto consectetur qui nisi. <br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus dicta nihil praesentium alias fuga explicabo, corporis odio, sunt vitae esse sequi architecto voluptatum quo accusantium voluptate eveniet earum eius consequatur! <br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque ratione ea est quas provident aliquid saepe ut, impedit dolor sunt rem deleniti harum tempora fugit officiis iure modi alias eos?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab atque fugit asperiores, dolorem molestias sit, culpa vero, inventore velit sapiente ex exercitationem commodi ad rerum enim vel a voluptate alias.</p>
+                <p class="about_text-back border" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus corrupti, aspernatur itaque autem ab debitis quas commodi consequatur omnis aperiam repudiandae vel? Vero, incidunt culpa provident architecto consectetur qui nisi. <br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus dicta nihil praesentium alias fuga explicabo, corporis odio, sunt vitae esse sequi architecto voluptatum quo accusantium voluptate eveniet earum eius consequatur! <br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque ratione ea est quas provident aliquid saepe ut, impedit dolor sunt rem deleniti harum tempora fugit officiis iure modi alias eos?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab atque fugit asperiores, dolorem molestias sit, culpa vero, inventore velit sapiente ex exercitationem commodi ad rerum enim vel a voluptate alias.</p>
+            </div>
+        </section>
+        <section class="products">
+            <h2 class="products_title">NEW PRODUCTS</h2>
+            <div class="products_product">
+                <div class="products_product-item">
+                    <div class="products_product-item-imgbn">
+                        <img src="./images/strawberry2.png" alt="" class="products_product-item-img border">
+                        <button class="products_product-item-btn">ADD TO CART</button>
+                    </div>
+                    <p class="products_product-item-intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum voluptas deserunt laborum architecto in a, consequuntur unde autem tenetur nulla numquam? Quisquam eveniet, consequuntur quasi aut quas sit commodi!</p>
+                </div>
+                <div class="products_product-item">
+                    <div class="products_product-item-imgbn">
+                        <img src="./images/lemon1.png" alt="" class="products_product-item-img border">
+                        <button class="products_product-item-btn">ADD TO CART</button>
+                    </div>
+                    <p class="products_product-item-intro" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum voluptas deserunt laborum architecto in a, consequuntur unde autem tenetur nulla numquam? Quisquam eveniet, consequuntur quasi aut quas sit commodi!</p>
+                </div>
+            </div>
+        </section>
+        <section class="collection">
+            <div class="collection_image"><img src="./images/egg.png" alt="" class="border"></div>
+            <div class="collection_text">
+                <h3 class="collection_text-heading">2021 NEW RELEASE</h3>
+                <h2 class="collection_text-title">OUR LATEST  <br> COLLECTION</h2>
+                <p class="collection_text-intro border" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, dolorem aliquid error nihil placeat laudantium quo quis molestiae? Iste natus explicabo quae quod nam autem amet impedit nemo corporis porro?</p>
+                <button class="collection_text-btn">LEARN MORE</button>
+            </div>
+        </section>
+        <section class="make">
+            <div class="make_text">
+                <h3 class="make_text-heading">BALL OF SWEETS</h3>
+                <h2 class="make_text-title">MAKE IT<br>MORE FUN</h2>
+                <div class="make_text-intro">
+                    <p class="make_text-intro-front border" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem nisi excepturi, laborum neque odit minus omnis! Incidunt eligendi doloribus accusantium expedita hic ab dolore vero, quaerat pariatur!</p>
+                    <p class="make_text-intro-back border" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem nisi excepturi, laborum neque odit minus omnis! Incidunt eligendi doloribus accusantium expedita hic ab dolore vero, quaerat pariatur!</p>
+                    <button class="make_text-intro-btn">VIEW COLLECTION</button>
+                </div>
+            </div>
+            <div class="make_image"><img src="./images/gummy.png" alt="" class="border"></div>
+        </section>
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="footer_top-part1">
+                    <h4>SWEET DELIGHT</h4>
+                    <div class="footer_top-part1-column">
+                        <div class="footer_top-part1-column-left">
+                            <a href="">2021's Bestsellers</a>
+                            <a href="">How to Order</a>
+                            <a href="">Payment Method</a>
+                            <a href="">Order Status</a>
+                            <a href="">New Promos</a>
+                        </div>
+                        <div class="footer_top-part1-column-right">
+                            <a href="">Blog</a>
+                            <a href="">Delivery</a>
+                            <a href="">Support</a>
+                            <a href="">Gift</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_top-part2">
+                    <h4>NEWSLETTER</h4>
+                    <p>Join our newsletter for updates</p>
+                    <form action="">
+                        <input type="email" placeholder="youremail@gmail.com">
+                        <br>
+                        <button>SUBSCRIBE NOW</button>
+                    </form>
+                </div>
+                <div class="footer_top-part3">
+                    <h4>LEGAL</h4>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Our Promise</a>
+                    <a href="">More Information</a>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>Copyright 2021 <span>Sweet Delights</span> All Rights Reserved</p>
+                <div class="footer_bottom-icon">
+                    <a href=""><img src="./images/iconfb.png" alt=""></a>
+                    <a href=""><img src="./images/iconins.png" alt=""></a>
+                    <a href=""><img src="./images/icontw.png" alt=""></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

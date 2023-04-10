@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products List</title>
+	<link href="https://fonts.googleapis.com/css?family=Chango|DM+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<%= baseUrl %>/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/37ede97c0e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <style>
+		/* Định nghĩa biến màu chủ đạo */
+		:root {
+  --primary-color: #daaeab;
+  --primary-dark-color: #ca928e;
+  --secondary-color: #f9fed8;
+  --accent-color: #a3514a;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'DM Sans', sans-serif;
+}
+
+h2 {
+  color: var(--accent-color);
+  font-size: 3rem;
+  text-align: center;
+  font-family: 'Chango';
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  color: var(--accent-color);
+  margin: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+
+li h3 {
+  font-family: 'Chango', cursive;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+li p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+li button {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Chango';
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: var(--primary-dark-color);
+}
+
+.header{
+	position: fixed;
+	width: 100%;
+}
+h2{
+	text-align: center;
+	margin: 0;
+	padding-top: 50px;
+}
+.flex-container_products{
+	flex-direction: column;
+}
+.center{
+    display: flex;
+    justify-content: center;
+	padding-bottom: 30px;
+
+}
+::placeholder{
+    color:var(--secondary-color);
+}
+.center input{
+	padding:5px;
+	background-color: var(--primary-dark-color);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.center input:focus{
+	outline: none;
+	opacity: 0.9;
+}
+.center button{
+	padding:5px;
+	background-color: var(--primary-dark-color);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--secondary-color);
+    cursor:pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+	<header class="header">
+		<img class="header_logo" src="./images/logo.png" alt="">
+		 <nav class="header_navigation">
+			 <a href="/" class="header_navigation-item">HOME</a>
+			 <a href="#sec_about" class="header_navigation-item">ABOUT US</a>
+			 <a href="/products" class="header_navigation-item">PRODUCTS</a>
+			 <a href="" class="header_navigation-item">BLOG</a>
+			 <a href="" class="header_navigation-item">CONTACT</a>
+		 </nav>
+		 <div class="header_icon">
+			 <a href="" class="header_icon-item"><i class="fa-solid fa-user" ></i></a>
+			 <div class="user">
+				<% if (userName) { %>
+					<p>Hello <%= userName %><a href=""></a></p>
+					<a href="/logout"> Logout <i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 11px;"></i></a>
+				  <% }else{ %>
+					<p>ACCOUNT</p>
+					<a href="/login">Login</a>
+                    <a href="">|</a>
+                    <a href="/register">Register</a>
+				 <% } %>				  
+			 </div>
+			 <a href="" class="header_icon-item"><i class="fa-regular fa-heart"></i></a>
+			 <a href="/cart" class="header_icon-item"><i class="fa-solid fa-weight-hanging"></i></a>
+			 <input type="checkbox" id="hamburger">
+			 <label for="hamburger" class="header_icon-item"><i class="fa-solid fa-bars"></i></label>
+			 <div class="menu">
+				 <a href="/">HOME</a>
+				 <a href="">ABOUT US</a>
+				 <a href="">PRODUCTS</a>
+				 <a href="">BLOG</a>
+				 <a href="">CONTACT</a>
+			 </div>
+		 </div>
+	 </header>
+
+	<section class="flex-container_products">
+		<h2>Products List</h2>
+		<div class="center">
+			<form action="/products_search" method="get">
+			  <input type="text" placeholder="Products Search..." name="name">
+			  <button type="submit" fdprocessedid="iwefs">Search</button>
+			</form>
+		  </div>
+		<ul>
+			<% if (Items.length > 0) { %>
+				<% for (let i = 0; i < Items.length; i++) { %>
+			<li>
+				<img src='<%= baseUrl + Items[i].image.replace("..","") %>' alt="<%= Items[i].name %>">
+				<h3><%= Items[i].name %></h3>
+				<p>Price: <%= Items[i].price %> $</p>
+				<p>Year: <%= Items[i].year %></p>
+				<p>Brand: <%= Items[i].brand %></p>
+				<p>Category: <%= Items[i].category %></p>
+                <p>Description: <%= Items[i].description %></p>
+
+				<form method="POST" action="/add-to-cart">
+					<input type="hidden" name="productId" value="<%= Items[i]._id %>">
+					<input type="hidden" name="productName" value="<%= Items[i].name %>">
+					<input type="hidden" name="productPrice" value=<%= Items[i].price %>>
+					<input type="hidden" name="productYear" value=<%= Items[i].year %>>
+					<input type="hidden" name="productBrand" value="<%= Items[i].brand %>">
+					<input type="hidden" name="productCategory" value="<%= Items[i].category %>">
+					<button type="submit">ADD TO CART</button>
+				</form>
+				
+			</li>
+			<% } %>
+      		<% } else { %>
+				<li>
+				<p colspan="5">Products not found!</p>
+				</li>
+				<% } %> 
+		</ul>
+	</section>
+	
+</body>
+</html>

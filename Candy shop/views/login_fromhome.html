@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=DM+Sans&display=swap" rel="stylesheet">
+    <style>
+    :root {
+    --primary-color: #daaeab;
+    --primary-dark-color: #ca928e;
+    --secondary-color: #f9fed8;
+    --accent-color: #a3514a;
+}
+    body {
+  font-family: 'DM Sans';
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent-color);
+  font-family: 'Chango';
+  font-size: 45px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent-color);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  font-size: 18px;
+}
+input[type="email"]:focus,
+input[type="password"]:focus{
+    outline: none;
+    border: 1px solid var(--accent-color);
+}
+
+button[type="submit"] {
+  width: 30%;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'DM Sans';
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+button[type="submit"]:hover{
+    opacity: 0.9;
+}
+.btn{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+a {
+  color: var(--primary-dark-color);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <p><%= messages %></p>
+    <form action="/login_home" method="POST">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="userEmail" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="userPassword" required>
+      </div>
+      <div class="btn">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+    <p>If you don't have an account, <a href="./register" >register here</a></p>
+  </body>
+</html>

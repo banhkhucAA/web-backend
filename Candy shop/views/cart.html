@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Cart</title>
+  <link rel="stylesheet" href="<%= baseUrl %>/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Chango|DM+Sans&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/37ede97c0e.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+  --primary-color: #daaeab;
+  --primary-dark-color: #ca928e;
+  --secondary-color: #f9fed8;
+  --accent-color: #a3514a;
+}
+
+body {
+  background-color: var(--secondary-color);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--accent-color);
+}
+
+h1 {
+  padding-top: 120px;
+  color: var(--primary-dark-color);
+  font-family: 'Chango', cursive;
+  font-size: 3rem;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+th, td {
+  border: 1px solid var(--primary-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+th {
+  background-color: var(--primary-dark-color);
+  color: var(--secondary-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--primary-dark-color);
+}
+
+button[type="submit"] {
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: 4px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-dark-color);
+}
+
+p{
+    text-align: center;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+::placeholder{
+    color:var(--accent-color);
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img class="header_logo" src="<%= baseUrl %>/images/logo.png" alt="">
+     <nav class="header_navigation">
+         <a href="/" class="header_navigation-item">HOME</a>
+         <a href="#sec_about" class="header_navigation-item">ABOUT US</a>
+         <a href="/products" class="header_navigation-item">PRODUCTS</a>
+         <a href="" class="header_navigation-item">BLOG</a>
+         <a href="" class="header_navigation-item">CONTACT</a>
+     </nav>
+     <div class="header_icon">
+         <a href="" class="header_icon-item"><i class="fa-solid fa-user" ></i></a>
+         <div class="user">
+             <p>Hello <%= userName %><a href=""></a>
+             </p>
+             <a href="/logout"> Logout <i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 11px;"></i></a>
+         </div>
+         <a href="" class="header_icon-item"><i class="fa-regular fa-heart"></i></a>
+         <a href="/cart" class="header_icon-item"><i class="fa-solid fa-weight-hanging"></i></a>
+         <input type="checkbox" id="hamburger">
+         <label for="hamburger" class="header_icon-item"><i class="fa-solid fa-bars"></i></label>
+         <div class="menu">
+             <a href="/">HOME</a>
+             <a href="">ABOUT US</a>
+             <a href="">PRODUCTS</a>
+             <a href="">BLOG</a>
+             <a href="">CONTACT</a>
+         </div>
+     </div>
+ </header>
+  <h1>My Cart</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Brand</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (cartItems.length > 0) { %>
+        <% for (let i = 0; i < cartItems.length; i++) { %>
+          <tr>
+            <td><%= cartItems[i].name %></td>
+            <td><%= cartItems[i].year %></td>
+            <td><%= cartItems[i].price %>$</td>
+            <td><%= cartItems[i].brand %></td>
+            <td><%= cartItems[i].category %></td>
+            <td>
+              <form action="/cart/update/<%= cartItems[i]._id %>?_method=PUT" method="post">
+                <input type="number" name="productQuantity" value="<%= cartItems[i].quantity %>" min="1">
+                <button type="submit">Update</button>
+              </form>
+            </td>
+            <td>
+              <form action="/cart/remove/<%= cartItems[i]._id %>?_method=DELETE" method="POST">
+                <button type="submit">Remove</button>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      <% } else { %>
+        <tr>
+          <td colspan="7">Không có sản phẩm trong giỏ hàng</td>
+        </tr>
+      <% } %> 
+    </tbody>
+  </table>
+    <p><strong>Total Count:</strong> <%= cartTotal %></p>
+    <p><strong>Total Price:</strong> <%= cartPrice %>$</p>
+</body>
+</html>
+

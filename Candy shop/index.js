@@ -124,7 +124,6 @@ app.delete('/cart/remove/:id', async (req, res) => {
 app.put('/cart/update/:id', async (req, res) => {
   userId = req.session.user._id;
   let quantity = parseInt(req.body.productQuantity,10)
-  console.log(quantity)
   const result = await updateCartProduct_By_UserID_and_ProductID(userId,req.params.id,quantity);
    return cart(req, res);
  });

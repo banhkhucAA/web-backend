@@ -51,7 +51,6 @@ function getUserCollection() {
 async function getProduct_fromUserCartbyProductID(userId,product) {
     const user = await getUserCollection().findOne({ _id: new ObjectId(userId) }, { projection: { cart:1} });
     let cartItems = user.cart;
-    console.log(cartItems[0]._id)
     let productID;
     let foundProduct=null;
     productID = product._id.toString();
